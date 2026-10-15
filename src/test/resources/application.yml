@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:jobportal;MODE=MySQL;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+  servlet:
+    multipart:
+      max-file-size: 6MB
+      max-request-size: 7MB
+
+app:
+  jwt:
+    secret: test-secret-test-secret-test-secret-123456
+    expiration-minutes: 60
+  cors:
+    allowed-origins: http://localhost:5173
+  storage:
+    upload-dir: ./target/test-uploads
+    max-resume-bytes: 5242880
+  seed:
+    demo-data: false
+  admin:
+    email:
+    password:
+    name: Test Admin
+  demo:
+    password: Demo@12345
